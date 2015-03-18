@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Junit Awards 1.0</h1>
+<br/>
+<h1>The winner is.....</h1>
+<b> User $authorList.get(0).get('name') with and outstanding $authorList.get(0).get('testsDone') tests Done!</b>
+<img src="junitAward.jpg"/> 
+<br/>
+<br/>
+The total Junit Tests in the project is  $totalTest. 
+<br/>
+#if ($totalTest != $totalTestWithAuthor)
+#set( $dif = $totalTest - $totalTestWithAuthor)
+<br/>
+<p span="style:color=red;">There are $dif tests without declared author!. Tell the team to be more carefull, they may miss the award!</p>
+<br/>
+#end
+<br/>
+All the tests done by each author.
+<table  style="width:200px">
+<tbody>
+  <tr>
+    <th>Author</th>
+    <th>Tests Done</th>
+  </tr>
+	#foreach( $author in $authorList )
+	<tr>
+		<td>$author.name</td>
+		<td>$author.testsDone</td>
+  	</tr>
+	#end
+	<tr>
+		<td><b>Total </b></td>
+		<td>$totalTestWithAuthor</td>
+  	</tr>
+	</tbody>
+ <table>
+ <body>
+</html>
