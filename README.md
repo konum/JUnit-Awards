@@ -36,3 +36,5 @@ The next improvements are:
     Get it to a repository so no forking-installing.
     Add a "Since Date" parameter so you can know how many tests have been written in a time span.
     Improving @author scan so it counts only in functions noted with @Test.
+
+Release under GNU General Public License, version 3 (GPL-3.0)
