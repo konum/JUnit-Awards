@@ -1,12 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>junitaward.plugin</groupId>
+	<groupId>com.github.konum</groupId>
 	<artifactId>junitaward-maven-plugin</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<name>JUnit Award</name>
-	<description>Maven plugin for count test developed by team members.  </description>
+	<description>Maven plugin for count unit test developed by team members and promote unit testing in the team.</description>
+	<url>https://github.com/konum/JUnit-Awards</url>
+	<licenses>
+		<license>
+			<name>GNU General Public License, version 3 (GPL-3.0)</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Guillermo Gefaell</name>
+			<email>ggvalcarce@gmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:konum/JUnit-Awards.git</connection>
+		<developerConnection>scm:git:git@github.com:konum/JUnit-Awards.git</developerConnection>
+		<url>git@github.com:konum/JUnit-Awards.git</url>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
@@ -43,13 +61,62 @@
 			<version>1.7</version>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>junitaward.plugin</groupId>
 				<artifactId>junitaward-maven-plugin</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>1.0</version>
 			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>
