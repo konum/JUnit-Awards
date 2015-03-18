@@ -18,16 +18,13 @@ It generates a simple html page with the results.
 For now i'm still seeing how to get the plugin to be avaliable at a repository, but you can follow this steps for runing it on your project.
 
     1. Add the plugin to your project's pom. 
-   
-   <plugin>
+    <plugin>
         <groupId>com.github.konum</groupId>
         <artifactId>junitaward-maven-plugin</artifactId>
         <version>1.1</version>
     </plugin> 
-
     2. Run mvn junitward:awards on your project.
-    
-    The results are generated in the folder /target/junitaward/junitAward.html
+    3. The results are generated in the folder /target/junitaward/junitAward.html
 
 
 The next improvements are:
