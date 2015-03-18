@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.konum</groupId>
 	<artifactId>junitaward-maven-plugin</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.1</version>
 	<packaging>maven-plugin</packaging>
 	<name>JUnit Award</name>
 	<description>Maven plugin for count unit test developed by team members and promote unit testing in the team.</description>
@@ -74,9 +74,9 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>junitaward.plugin</groupId>
+				<groupId>com.github.konum</groupId>
 				<artifactId>junitaward-maven-plugin</artifactId>
-				<version>1.0</version>
+				<version>1.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>

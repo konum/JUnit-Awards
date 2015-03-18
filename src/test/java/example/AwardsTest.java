@@ -1,15 +1,16 @@
 package example;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import junitaward.plugin.AwardsMojo;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.github.konum.junitaward.AwardsMojo;
 
-public class ExampleTest  {
+
+public class AwardsTest  {
 
 	/**
 	 * 
@@ -29,7 +30,7 @@ public class ExampleTest  {
 	 */
 	protected void tearDown() throws Exception {
 	}
-
+ 
 	/**
 	 * @author ggefaell
 	 * @throws Exception 
@@ -37,7 +38,7 @@ public class ExampleTest  {
 	 */
 	@Test
 	public void test1() throws Exception {
-		Path root = Paths.get("C:\\j-everis3.1\\ws_bip\\junitaward\\src\\test\\java\\example\\ExampleTest.java");
+		Path root = (new File(this.getClass().getResource("/EmptyTests.java").getPath())).toPath();
 		AwardsMojo mojo = new AwardsMojo();
 		mojo.analyzeFile(root);
 		Assert.assertEquals(Integer.valueOf(2),mojo.getResult().get("ggefaell"));
@@ -46,9 +47,10 @@ public class ExampleTest  {
 	
 	@Test
 	public void testGenerateHtml() throws Exception {
-		Path root = Paths.get("C:\\j-everis3.1\\ws_bip\\junitaward\\src\\test\\java\\example\\EmptyTests.java");
+		Path root = (new File(this.getClass().getResource("/EmptyTests.java").getPath())).toPath();
 		AwardsMojo mojo = new AwardsMojo();
 		mojo.analyzeFile(root);
-		mojo.generateHtml(mojo.getResult(),Paths.get("C:\\j-everis3.1\\ws_bip\\junitaward\\"));
+		mojo.generateHtml(mojo.getResult(),(new File(this.getClass().getResource("/").getPath())).toPath());
+		Assert.assertTrue(Files.exists((new File(this.getClass().getResource("/target/junitaward/junitAwards.html").getPath())).toPath()));
 	}
 }

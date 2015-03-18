@@ -1,0 +1,6 @@
+Version 1.0.1
+Minor changes in files.
+Some info to console.
+
+Version 1.0
+Initial version
