@@ -8,7 +8,7 @@ table, th, td {
 </style>
 </head>
 <body>
-<h1>Junit Awards 1.0</h1>
+<h1>Junit Awards 1.2</h1>
 <br/>
 <h1>The winner is.....</h1>
 <b> User $authorList.get(0).get('name') with and outstanding $authorList.get(0).get('testsDone') tests done#if ($testsSince) since $testsSince #end!</b>
