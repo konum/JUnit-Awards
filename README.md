@@ -1,7 +1,7 @@
 # JUnit-Awards
 Maven plugin for counting Junits done by team members.
 
-This plug in scans the entire src/test/java (or other) fould of your project searching for the @author tag of javadoc, getting the author name and increasing the count for it.
+This plugin scans the entire src/test/java (or other) fould of your project searching for the @author tag of javadoc, getting the author name and increasing the count for it.
 
 The @author tag must be enclosed in a javadoc block like:
 
@@ -27,7 +27,7 @@ Or
 
 It generates a simple html page with the results.
 
-For now i'm still seeing how to get the plugin to be avaliable at a repository, but you can follow this steps for runing it on your project.
+To use it follow this steps:
 
     1. Add the plugin to your project's pom. 
     <plugin>
