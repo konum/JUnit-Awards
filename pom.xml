@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.konum</groupId>
 	<artifactId>junitaward-maven-plugin</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 	<packaging>maven-plugin</packaging>
 	<name>JUnit Award</name>
 	<description>Maven plugin for count unit test developed by team members and promote unit testing in the team.</description>
@@ -77,6 +77,12 @@
 				<groupId>com.github.konum</groupId>
 				<artifactId>junitaward-maven-plugin</artifactId>
 				<version>1.1</version>
+				<!-- All configs are optional Optional -->
+				<configuration>
+					<datePatter>dd/MM/yyyy</datePatter>
+					<testsFolder>src/test/java</testsFolder>
+					<testsSince>2015-03-14 0:00:00.0 AM</testsSince>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>

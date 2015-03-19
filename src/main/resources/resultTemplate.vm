@@ -11,11 +11,12 @@ table, th, td {
 <h1>Junit Awards 1.0</h1>
 <br/>
 <h1>The winner is.....</h1>
-<b> User $authorList.get(0).get('name') with and outstanding $authorList.get(0).get('testsDone') tests Done!</b>
+<b> User $authorList.get(0).get('name') with and outstanding $authorList.get(0).get('testsDone') tests done#if ($testsSince) since $testsSince #end!</b>
 <img src="junitAward.jpg"/> 
 <br/>
 <br/>
-The total Junit Tests in the project is  $totalTest. 
+#if (!$testsSince)
+The number of Junit Tests in the project is  $totalTest. 
 <br/>
 #if ($totalTest != $totalTestWithAuthor)
 #set( $dif = $totalTest - $totalTestWithAuthor)
@@ -24,6 +25,7 @@ The total Junit Tests in the project is  $totalTest.
 <br/>
 #end
 <br/>
+#end
 All the tests done by each author.
 <table  style="width:200px">
 <tbody>
