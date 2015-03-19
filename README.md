@@ -48,7 +48,9 @@ Ther are three optional parameters:
     </configuration>
 
 testsFolder = Define the root folder for searching Junit. Default is src/test/java
+
 testsSince = Displays results for test made since this date. The test must have @date in its javadoc. Default date pattern is dd-MM-yyyy. Without this parameter all test are given in thre result.
+
 datePatter = Allow to change date pattern. Default is dd-MM-yyyy. Only useful if testsSince is set.
 
 Release under GNU General Public License, version 3 (GPL-3.0)
